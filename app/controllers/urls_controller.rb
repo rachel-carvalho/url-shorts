@@ -33,10 +33,18 @@ class UrlsController < ApplicationController
   # DELETE /urls/1
   # DELETE /urls/1.json
   def destroy
-    @url.destroy
-    respond_to do |format|
-      format.html { redirect_to urls_url }
-      format.json { head :no_content }
+    if @url.user.id == current_user.id
+      @url.destroy
+      respond_to do |format|
+        format.html { redirect_to urls_url }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        err = { error: "Can't to delete a url that doesn't belong to you" }
+        format.html { redirect_to urls_url, err }
+        format.json { render json: err, status: :unprocessable_entity }
+      end
     end
   end
 

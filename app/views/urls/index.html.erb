@@ -4,10 +4,12 @@
   <thead>
     <tr>
       <th>Original</th>
-      <th>Short</th>
+      <th>Shortened</th>
       <th>Clicks</th>
       <th></th>
-      <th></th>
+      <% if user_signed_in? %>
+        <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -15,10 +17,12 @@
     <% @urls.each do |url| %>
       <tr>
         <td><%= url.original %></td>
-        <td><%= url.short %></td>
+        <td><%= polymorphic_url(:short, short: url.short) %></td>
         <td><%= url.clicks %></td>
         <td><%= link_to 'Info', polymorphic_url(:short, short: "#{url.short}+") %></td>
-        <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
