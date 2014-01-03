@@ -3,6 +3,8 @@ class Url
   field :original, type: String
   field :clicks, type: Integer, default: 0
 
+  belongs_to :user
+
   def short
     id.to_s
   end

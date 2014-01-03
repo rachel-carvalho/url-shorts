@@ -6,7 +6,11 @@ class UrlsController < ApplicationController
   # GET /urls
   # GET /urls.json
   def index
-    @urls = Url.all
+    if user_signed_in?
+      @urls = current_user.urls
+    else
+      @urls = Url.all
+    end
   end
 
   # GET /urls/1
@@ -25,6 +29,7 @@ class UrlsController < ApplicationController
     @url = Url.new(url_params)
 
     respond_to do |format|
+      @url.user = current_user
       if @url.save
         format.html { redirect_to @url, notice: 'Url was successfully created.' }
         format.json { render action: 'show', status: :created, location: @url }
