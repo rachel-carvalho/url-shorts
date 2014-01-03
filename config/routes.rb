@@ -1,5 +1,5 @@
 UrlShorts::Application.routes.draw do
-  resources :urls
+  resources :urls, except: [:update, :edit]
 
   get '/:short' => 'home#go'
 

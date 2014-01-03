@@ -2,8 +2,8 @@
 
 one:
   original: MyString
-  short: MyString
+  short: 12
 
 two:
   original: MyString
-  short: MyString
+  short: asdf
