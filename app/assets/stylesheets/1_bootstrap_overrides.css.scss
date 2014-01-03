@@ -1,0 +1,21 @@
+@import 'bootstrap';
+
+table {
+  @extend .table;
+  @extend .table-hover;
+}
+
+input[type="submit"], button {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+div.field { @extend .form-group; }
+
+menu { @extend .form-actions }
+
+menu input[type="submit"] { @extend .btn-primary; }
+menu a {
+  @extend .btn;
+  @extend .btn-link;
+}

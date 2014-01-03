@@ -45,3 +45,5 @@ gem 'mongoid', '4.0.0.alpha1'
 
 # [mongoid] For optimal performance, use of the BSON extension is recommended.
 gem 'bson_ext'
+
+gem 'bootstrap-sass'
