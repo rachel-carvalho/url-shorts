@@ -1,8 +1,8 @@
 <div ng-app="Shorts" ng-controller="ShortenUrlCtrl" ng-init="init()">
   <%= form_for(@url, html: {'ng-submit' => 'shorten($event)'}) do |f| %>
     <div class="field">
-      <%= f.label :original, 'Your url' %>
-      <%= f.url_field :original, placeholder: 'http://google.com', 'ng-model' => 'original', 'http-prefix' => 'http-prefix', disabled: !user_signed_in? %>
+      <%= f.label :original, 'Your url:' %>
+      <%= f.url_field :original, placeholder: 'http://google.com', 'ng-model' => 'original', 'http-prefix' => 'http-prefix', 'required' => 'required', disabled: !user_signed_in? %>
     </div>
 
     <menu>
@@ -10,17 +10,17 @@
     </menu>
   <% end %>
 
-<%
-unless user_signed_in?
-%>
-  <div id="needs-login">
-    <%= link_to 'Sign up', new_user_registration_path%> or
-    <%= link_to 'Login', new_user_session_path %>
-    to shorten your urls!
-  </div>  
-<%
-end
-%>
+  <%
+  unless user_signed_in?
+  %>
+    <div id="needs-login">
+      <%= link_to 'Sign up', new_user_registration_path%> or
+      <%= link_to 'Login', new_user_session_path %>
+      to shorten your urls!
+    </div>  
+  <%
+  end
+  %>
 
   <div id="shortened" ng-show="url">
     <span>Your shortened url:</span>

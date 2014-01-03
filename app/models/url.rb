@@ -12,6 +12,8 @@ class Url
 
   increments :num_id, seed: 1000000
 
+  validates_presence_of :original
+
   def short
     bijective_encode num_id
   end
