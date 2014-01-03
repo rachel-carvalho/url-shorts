@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/evsyukovmv/mongoid-autoinc
+  revision: 9313be20c3f678b8c95f5fd76848c65b316f103d
+  branch: rails-4-support
+  specs:
+    mongoid-autoinc (0.5.1)
+      activesupport
+      mongoid (>= 3.0)
+      rake
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -138,6 +148,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mongoid (= 4.0.0.alpha1)
+  mongoid-autoinc!
   rails (= 4.0.1)
   sass-rails (~> 4.0.0)
   sdoc

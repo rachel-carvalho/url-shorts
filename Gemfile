@@ -49,3 +49,7 @@ gem 'bson_ext'
 gem 'bootstrap-sass'
 
 gem 'devise'
+
+# using fork from pending pull request to support rails 4
+gem 'mongoid-autoinc', git: 'git://github.com/evsyukovmv/mongoid-autoinc', branch: 'rails-4-support'
+
