@@ -5,6 +5,7 @@
     <tr>
       <th>Original</th>
       <th>Short</th>
+      <th>Clicks</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= url.original %></td>
         <td><%= url.short %></td>
+        <td><%= url.clicks %></td>
         <td><%= link_to 'Show', url %></td>
         <td><%= link_to 'Edit', edit_url_path(url) %></td>
         <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>

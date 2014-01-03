@@ -1,6 +1,7 @@
 class Url
   include Mongoid::Document
   field :original, type: String
+  field :clicks, type: Integer, default: 0
 
   def short
     _id

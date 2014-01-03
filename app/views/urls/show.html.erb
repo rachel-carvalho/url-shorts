@@ -10,6 +10,11 @@
   <%= @url.short %>
 </p>
 
+<p>
+  <strong>Clicks:</strong>
+  <%= @url.clicks %>
+</p>
+
 <menu>
   <%= link_to 'Edit', edit_url_path(@url) %> |
   <%= link_to 'Back', urls_path %>
