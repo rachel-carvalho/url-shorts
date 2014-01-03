@@ -53,3 +53,8 @@ gem 'devise'
 # using fork from pending pull request to support rails 4
 gem 'mongoid-autoinc', git: 'git://github.com/evsyukovmv/mongoid-autoinc', branch: 'rails-4-support'
 
+gem 'minitest-reporters', group: :test
+
+gem 'factory_girl_rails', '~> 4.0'
+
+gem 'database_cleaner'
