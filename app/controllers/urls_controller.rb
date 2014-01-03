@@ -1,7 +1,7 @@
 class UrlsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy]
 
-  before_action :set_url, only: [:show, :destroy]
+  before_action :set_url, only: [:destroy]
 
   # GET /urls
   # GET /urls.json
@@ -13,16 +13,6 @@ class UrlsController < ApplicationController
     end
   end
 
-  # GET /urls/1
-  # GET /urls/1.json
-  def show
-  end
-
-  # GET /urls/new
-  def new
-    @url = Url.new
-  end
-
   # POST /urls
   # POST /urls.json
   def create
@@ -31,7 +21,7 @@ class UrlsController < ApplicationController
     respond_to do |format|
       @url.user = current_user
       if @url.save
-        format.html { redirect_to @url, notice: 'Url was successfully created.' }
+        format.html { redirect_to polymorphic_url([:short], short: "#{@url.short}+"), notice: 'Url was successfully shortened.' }
         format.json { render action: 'show', status: :created, location: @url }
       else
         format.html { render action: 'new' }
@@ -58,6 +48,6 @@ class UrlsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def url_params
-      params.require(:url).permit(:original, :short)
+      params.require(:url).permit(:original)
     end
 end

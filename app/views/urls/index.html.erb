@@ -8,7 +8,6 @@
       <th>Clicks</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -18,7 +17,7 @@
         <td><%= url.original %></td>
         <td><%= url.short %></td>
         <td><%= url.clicks %></td>
-        <td><%= link_to 'Show', url %></td>
+        <td><%= link_to 'Info', polymorphic_url(:short, short: "#{url.short}+") %></td>
         <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -26,5 +25,5 @@
 </table>
 
 <menu>
-  <%= link_to 'New Url', new_url_path %>
+  <%= link_to 'Shorten a url', '/' %>
 </menu>

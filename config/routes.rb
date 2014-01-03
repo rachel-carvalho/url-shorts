@@ -1,6 +1,6 @@
 UrlShorts::Application.routes.draw do
   devise_for :users
-  resources :urls, except: [:update, :edit]
+  resources :urls, only: [:index, :create, :destroy]
 
   get '/:short' => 'home#go', as: :short
 
