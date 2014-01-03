@@ -47,3 +47,5 @@ gem 'mongoid', '4.0.0.alpha1'
 gem 'bson_ext'
 
 gem 'bootstrap-sass'
+
+gem 'devise'

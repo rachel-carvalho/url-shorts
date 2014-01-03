@@ -2,13 +2,25 @@
   <%= form_for(@url, html: {'ng-submit' => 'shorten($event)'}) do |f| %>
     <div class="field">
       <%= f.label :original, 'Your url' %>
-      <%= f.url_field :original, placeholder: 'http://google.com', 'ng-model' => 'original', 'http-prefix' => 'http-prefix' %>
+      <%= f.url_field :original, placeholder: 'http://google.com', 'ng-model' => 'original', 'http-prefix' => 'http-prefix', disabled: !user_signed_in? %>
     </div>
 
     <menu>
-      <button type="submit">Shorten</button>
+      <button type="submit" <%= !user_signed_in? ? 'disabled' : '' %>>Shorten</button>
     </menu>
   <% end %>
+
+<%
+unless user_signed_in?
+%>
+  <div id="needs-login">
+    <%= link_to 'Sign up', new_user_registration_path%> or
+    <%= link_to 'Login', new_user_session_path %>
+    to shorten your urls!
+  </div>  
+<%
+end
+%>
 
   <div id="shortened" ng-show="url">
     <span>Your shortened url:</span>
