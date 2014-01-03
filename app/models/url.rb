@@ -19,7 +19,7 @@ class Url
   end
 
   def self.num_id_from_short(s)
-    bijective_decode s
+    Url.bijective_decode s
   end
 
   def clicked!

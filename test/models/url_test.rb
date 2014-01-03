@@ -10,6 +10,10 @@ class UrlTest < ActiveSupport::TestCase
     assert_equal @url.user, @user
   end
 
+  test 'short is not nil' do
+    assert_not_nil @url.short
+  end
+
   test 'numeric id increment' do
     previous_num = @url.num_id
 
