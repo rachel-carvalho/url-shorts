@@ -20,7 +20,7 @@ class HomeController < ApplicationController
     if info
       render action: 'info'
     else
-      @url.inc clicks: 1
+      @url.clicked!
       redirect_to @url.original
     end
   end

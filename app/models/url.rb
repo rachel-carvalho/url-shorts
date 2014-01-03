@@ -20,6 +20,10 @@ class Url
     bijective_decode s
   end
 
+  def clicked!
+    inc clicks: 1
+  end
+
   protected
     ALPHABET =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split(//)
