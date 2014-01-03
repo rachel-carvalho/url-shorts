@@ -1,1 +1,18 @@
-<%= render 'urls/form' %>
+<div ng-app="Shorts" ng-controller="ShortenUrlCtrl" ng-init="init()">
+  <%= form_for(@url, html: {'ng-submit' => 'shorten($event)'}) do |f| %>
+    <div class="field">
+      <%= f.label :original, 'Your url' %>
+      <%= f.url_field :original, placeholder: 'http://google.com', 'ng-model' => 'original', 'http-prefix' => 'http-prefix' %>
+    </div>
+
+    <menu>
+      <button type="submit">Shorten</button>
+    </menu>
+  <% end %>
+
+  <div id="shortened" ng-show="url">
+    <span>Your shortened url:</span>
+    <strong>{{url.href}}</strong>
+    <a href="{{url.infohref}}">more info</a>
+  </div>
+</div>

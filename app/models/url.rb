@@ -4,7 +4,7 @@ class Url
   field :clicks, type: Integer, default: 0
 
   def short
-    _id
+    id.to_s
   end
 
   def self.id_from_short(s)

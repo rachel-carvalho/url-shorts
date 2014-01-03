@@ -1,4 +1,5 @@
 json.array!(@urls) do |url|
-  json.extract! url, :id, :original, :short
-  json.url url_url(url, format: :json)
+  json.extract! url, :original, :clicks, :short
+
+  json.id url.id.to_s
 end

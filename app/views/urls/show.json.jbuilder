@@ -1,1 +1,3 @@
-json.extract! @url, :id, :original, :short, :created_at, :updated_at
+json.extract! @url, :original, :clicks, :short
+
+json.id @url.id.to_s

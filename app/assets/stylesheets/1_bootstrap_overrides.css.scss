@@ -14,7 +14,11 @@ div.field { @extend .form-group; }
 
 menu { @extend .form-actions }
 
-menu input[type="submit"] { @extend .btn-primary; }
+menu input[type="submit"],
+menu button {
+  @extend .btn-primary;
+}
+
 menu a {
   @extend .btn;
   @extend .btn-link;

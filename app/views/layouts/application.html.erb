@@ -3,19 +3,21 @@
 <head>
   <title>Url Shorts</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js" %>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-resource.min.js" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <div class="container">
     <header>
       <h1>
         <a href="/">Url Shorts</a>
       </h1>
     </header>
-    <%= yield %>
-  </div>
 
+    <%= yield %>
+
+  </div>
 </body>
 </html>
