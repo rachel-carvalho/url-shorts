@@ -10,7 +10,7 @@ class Url
 
   belongs_to :user
 
-  increments :num_id
+  increments :num_id, seed: 1000000
 
   def short
     bijective_encode num_id
@@ -26,7 +26,7 @@ class Url
 
   protected
     ALPHABET =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split(//)
+    "abcdefghijkmnopqrstvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split(//)
     # make your own alphabet using:
     # (('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a).shuffle.join
    
