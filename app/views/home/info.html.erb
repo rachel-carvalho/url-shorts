@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Original:</strong>
+  <%= @url.original %>
+</p>
+
+<p>
+  <strong>Shortened:</strong>
+  <%= polymorphic_url :short %>
+</p>
+
+<p>
+  <strong>Clicks:</strong>
+  <%= @url.clicks %>
+</p>
