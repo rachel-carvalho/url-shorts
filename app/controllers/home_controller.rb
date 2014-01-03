@@ -15,7 +15,7 @@ class HomeController < ApplicationController
       short.chomp! '+'
     end
 
-    @url = Url.find_by(num_id: Url.num_id_from_short(short))
+    @url = Url.find_by(num_id: Url.num_id_from_short(short)) || not_found
 
     if info
       render action: 'info'
